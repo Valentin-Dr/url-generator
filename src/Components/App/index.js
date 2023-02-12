@@ -1,16 +1,9 @@
 import './styles.scss';
 import {
-  boostDesktop,
-  boostMobile,
-  shortenDesktop,
-  shortenMobile,
-  brandRecognition,
-  detailedRecords,
   iconFacebook,
   iconInstagram,
   iconPinterest,
   iconTwitter,
-  fullyCustomizable,
   working,
   logo,
   cyanLine,
@@ -27,6 +20,16 @@ function App() {
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   const shortenLink = (link) => {
+    const input = document.querySelector(".shorten-link-input");
+    if (!shortenLinkValue) {
+      input.placeholder = "Please add a link";
+      input.classList.add("shorten-link-warning");
+      return;
+    } else {
+      if (input.classList.contains("shorten-link-warning")) {
+        input.classList.remove("shorten-link-warning");
+      };
+    }
     const config = {
       method:'get',
       url:`/shorten?url=${link}`
@@ -54,7 +57,7 @@ function App() {
 
   const [createdLinks, setCreatedLinks] = useState([]);
   const [shortenLinkValue, setShortenLinkValue] = useState("");
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const jsxLinks = createdLinks.map((link) => 
     <div className="created-link-container" key={link.code}>
       <p className="original-link">

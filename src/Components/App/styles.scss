@@ -9,6 +9,7 @@
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  position: relative;
 }
 
 ul {
@@ -187,14 +188,23 @@ li {
   }
 }
 
-.shorten-link-input {
-  height: 50%;
-  width: 70%;
-  //flex-grow: 3;
-  padding: 0 30px;
-  border-radius: 10px;
-  &::placeholder {
-    font-size: 18px;
+.shorten-link {
+  &-input {
+    height: 50%;
+    width: 70%;
+    //flex-grow: 3;
+    padding: 0 30px;
+    border-radius: 10px;
+    transition: outline, color 100ms;
+    &::placeholder {
+      font-size: 18px;
+    }
+  }
+  &-warning {
+    outline: 2px solid red;
+    &::placeholder {
+      color: red;
+    }
   }
 }
 
@@ -459,6 +469,17 @@ li {
     margin: 50px 20px;
     & ul li:not(.home-button) {
       display: none;
+    }
+  }
+
+  .created-link {
+    &-container {
+      width: calc(80% - 80px);
+      flex-direction: column;
+    }
+    &-right {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 }
