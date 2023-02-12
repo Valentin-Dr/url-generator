@@ -110,9 +110,14 @@ function App() {
             <li className="sign-up">Sign Up</li>
           </ul>
         </div>
-        <img className={isMobile ? "open-menu" : "display-none"} src={openMenu} alt="Open menu" />
+        <img 
+        className={isMobile ? "open-menu" : "display-none"}
+        src={menuOpen ? closeMenu : openMenu}
+        alt="Open menu"
+        onClick={() => {setMenuOpen(!menuOpen)}}
+        />
       </header>
-      {openMenu && jsxMenu()}
+      {menuOpen && jsxMenu()}
       <div className="container-top">
         <div className="container-top-left">
           <h1 className="container-top-title">More than just shorter links</h1>

@@ -70,7 +70,8 @@ li {
   font-weight: bold;
   border-radius: 10px;
   & ul li {
-    margin: 40px 0;
+    padding: 10px 0;
+    margin: 30px 0;
   }
   &-top {
     width: 80%;
@@ -83,6 +84,17 @@ li {
     align-items: center;
     position: absolute;
     z-index: 1;
+  }
+  &-bottom {
+    width: 80%;
+    & ul li:nth-child(2) {
+      background-color: hsl(180, 66%, 49%);
+      border-radius: 20px;
+      transition: background-color 100ms;
+      &:active {
+        background-color: hsl(180, 92%, 74%);
+      }
+    }
   }
 }
 
