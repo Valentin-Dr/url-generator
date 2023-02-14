@@ -17,7 +17,7 @@ import { useMediaQuery } from 'react-responsive';
 
 function App() {
 
-  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 950px)' });
 
   const shortenLink = (link) => {
     const input = document.querySelector(".shorten-link-input");
@@ -67,9 +67,11 @@ function App() {
         <p className="created-link">
           {link.shortenedLink}
         </p>
-        <div className="copy-link not-copied"
-        onClick={(e) => copyLink(e)}
-        >Copy</div>
+        <div
+        className="copy-link not-copied"
+        onClick={(e) => copyLink(e)}>
+        Copy
+        </div>
       </div>
     </div>  
   );
@@ -146,27 +148,27 @@ function App() {
         </div>
         <div className="small-section-container">
           <div className="small-section">
-            <div className="small-section-image" />
+            <div className="small-section-image image-brand" />
             <p className="small-section-title">
               Brand recognition
             </p>
             <p className="small-section-paragraph">
-            Boost your brand recognition with each click. Generic links don’t 
-            mean a thing. Branded links help instil confidence in your content.
+              Boost your brand recognition with each click. Generic links don’t 
+              mean a thing. Branded links help instil confidence in your content.
             </p>
           </div>
           <div className="small-section">
-            <div className="small-section-image" />
+            <div className="small-section-image image-records" />
             <p className="small-section-title">
               Detailed Records
             </p>
             <p className="small-section-paragraph">
-            Gain insights into who is clicking your links. Knowing when and where 
-            people engage with your content helps inform better decisions.
+              Gain insights into who is clicking your links. Knowing when and where 
+              people engage with your content helps inform better decisions.
             </p>
           </div>
           <div className="small-section">
-            <div className="small-section-image" />
+            <div className="small-section-image image-customizable" />
             <p className="small-section-title">
               Fully Customizable
             </p>

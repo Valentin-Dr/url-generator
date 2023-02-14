@@ -107,6 +107,9 @@ li {
     text-align: left;
     background-color: white;
     padding-bottom: 120px;
+    &-image {
+      height: fit-content;
+    }
     &-left {
       width: 50%;
     }
@@ -192,7 +195,6 @@ li {
   &-input {
     height: 50%;
     width: 70%;
-    //flex-grow: 3;
     padding: 0 30px;
     border-radius: 10px;
     transition: outline, color 100ms;
@@ -251,7 +253,6 @@ li {
   &-image {
     width: 100px;
     height: 100px;
-    background-image: url('../../images/icon-brand-recognition.svg');
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
@@ -268,6 +269,18 @@ li {
   &-paragraph {
     color: hsl(257, 7%, 63%);
     margin-bottom: 40px;
+  }
+}
+
+.image {
+  &-brand {
+    background-image: url('../../images/icon-brand-recognition.svg');
+  }
+  &-records {
+    background-image: url('../../images/icon-detailed-records.svg');
+  }
+  &-customizable {
+    background-image: url('../../images/icon-fully-customizable.svg');
   }
 }
 
@@ -368,7 +381,7 @@ li {
   opacity: 50%;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:950px) {
   .container {
     &-top {
       flex-direction: column-reverse;
